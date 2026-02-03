@@ -1,10 +1,18 @@
 # Hangman Game
 # Joshua Ferreira
 
-# User is allowed 6 incorrect guesses before losing the game. 
-# Computer act's as host, and one or more players try to guess the word.
+# Basic game function expectations:
+# 
+# -If a guess is correct, fill in the letter
+# -If a guess is incorrect, fill in the hangman
+# -Users have 6 incorrect guesses before 
+# -If user loses, show game over screen, show them the word, and allow them to try again
+# -If user wins, show win screen, and allow them to try again
 
-
+# Expanded game function expectations:
+#
+# -User can input custom words that friends can try to guess
+# -
 
 ##### import statements
 
