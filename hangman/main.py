@@ -1,43 +1,19 @@
-# Hangman Game
-# Joshua Ferreira
-
 # Basic game function expectations:
 # 
 # -If a guess is correct, fill in the letter
 # -If a guess is incorrect, fill in the hangman
 # -Users have 6 incorrect guesses before 
 # -If user loses, show game over screen, show them the word, and allow them to try again
-# -If user wins, show win screen, and allow them to try again
-
-# Expanded game function expectations:
-#
-# -User can input custom words that friends can try to guess
-# -
-
-##### import statements
+# -If user wins, show win screen, and allow them to try againimport time
 
 
-##### functions
-
-## welcome message & game rules
-# parameters: maximum incorrect tries, length of secret word
-# return: nothing
-def print_game_rules():
-    pass
 
 
-## get user letter
-# ask user to enter a single alphabetical letter
-# parameters: None
-# return: a single letter guess
-def get_user_letter():
-    pass
 
 
-## display hangman figure
-# print the current graphic based on bad guesses
-# parameters: current numer of incorrect bad_guesses
-# return: nothing
+
+
+
 def display_figure(bad_guesses):
     hangmen = ["""
 +------+
@@ -86,30 +62,8 @@ def display_figure(bad_guesses):
     print(hangmen[bad_guesses])
     return
 
-# DEBUG test for display_figure()
-# for x in range(7):
-#     display_figure(x)
-# remove above for loop before final version
-
-
-##### main program
-### variables
 
 
 
-### game loop
 
-# change this later to a random word using 
-# random.choice() and a list of words
-word = "computer"
 
-# variable to store the underscores (_) and correct letters
-# that the user has guessed
-blank_word = []
-
-# add an _ for every letter in the WORD
-for letter in word:
-    blank_word.append('_')
-
-# print the blank_word variable but not as a list
-print(" ".join(blank_word))

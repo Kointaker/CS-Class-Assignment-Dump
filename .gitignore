@@ -1,2 +1,3 @@
 # Mac Finder hidden files
 .DS_Store
+__pycache__/
