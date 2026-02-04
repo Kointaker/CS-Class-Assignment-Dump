@@ -1,24 +1,36 @@
-# hangman
-# your name, the date
+# -If a guess is correct, fill in the letter
+# -If a guess is incorrect, fill in the hangman
+# -Users have 6 incorrect guesses before losing
+# -If user loses, show game over screen, and show them the word
+# -If user wins, say they win
 
-##### import statements
+
+##### import statements #####
+import random
+import time
+
+##### functions #####
 
 
-##### functions
 
 ## welcome message & game rules
 # parameters: maximum incorrect tries, length of secret word
 # return: nothing
 def print_game_rules():
-    pass
-
+    print("You get 6 wrong attempts, after that, you lose. Good luck!")
+    time.sleep(1)
 
 ## get user letter
 # ask user to enter a single alphabetical letter
 # parameters: None
 # return: a single letter guess
 def get_user_letter():
-    pass
+    while True:
+        guess = input("Guess here: ").lower()
+        if len(guess) == 1:
+            break
+        else:
+            print("Hey! Input one word!")
 
 
 ## display hangman figure
@@ -79,16 +91,17 @@ def display_figure(bad_guesses):
 # remove above for loop before final version
 
 
-##### main program
-### variables
+##### main program #####
+### variables ###
 
 
 
-### game loop
+### game loop ###
 
 # change this later to a random word using 
 # random.choice() and a list of words
-word = "computer"
+words = ["hello", "goodbye", "good", "bad", "content", "furious", "bombaclat"]
+word = words[random.randint(0, 6)]
 
 # variable to store the underscores (_) and correct letters
 # that the user has guessed
