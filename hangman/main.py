@@ -1,37 +1,102 @@
-# Basic game function expectations:
-# 
-# -If a guess is correct, fill in the letter
-# -If a guess is incorrect, fill in the hangman
-# -Users have 6 incorrect guesses before 
-# -If user loses, show game over screen, show them the word, and allow them to try again
-# -If user wins, show win screen, and allow them to try againimport time
+# hangman
+# your name, the date
 
-import random
-import time
-# From other file
-from functions import display_figure, collect_guess
+##### import statements
 
 
-# Variables/to start:
-starter_list = ["hello", "goodbye", "good", "bad", "happy", "sad", "content"]
-word = []
-choice = starter_list[random.randint(0, 6)]
-for i in list(choice):
-    word.append(i)
-print(word)
-bad_guesses = 0
+##### functions
+
+## welcome message & game rules
+# parameters: maximum incorrect tries, length of secret word
+# return: nothing
+def print_game_rules():
+    pass
+
+
+## get user letter
+# ask user to enter a single alphabetical letter
+# parameters: None
+# return: a single letter guess
+def get_user_letter():
+    pass
+
+
+## display hangman figure
+# print the current graphic based on bad guesses
+# parameters: current numer of incorrect bad_guesses
+# return: nothing
+def display_figure(bad_guesses):
+    hangmen = ["""
++------+
+|
+|
+|
+|
+=========""","""
++------+
+|      o
+|
+|
+|
+=========""","""
++------+
+|      o
+|      |
+|
+|
+=========""","""
++------+
+|      o
+|     /|
+|
+|
+=========""","""
++------+
+|      o
+|     /|\\
+|
+|
+=========""","""
++------+
+|      o
+|     /|\\
+|     /
+|
+=========""","""
++------+
+|      o
+|     /|\\
+|     / \\
+|
+========="""]
+    
+    print(hangmen[bad_guesses])
+    return
+
+# DEBUG test for display_figure()
+# for x in range(7):
+#     display_figure(x)
+# remove above for loop before final version
+
+
+##### main program
+### variables
 
 
 
+### game loop
 
+# change this later to a random word using 
+# random.choice() and a list of words
+word = "computer"
 
-def main():
-    print("Welcome to hangman! You will be allowed to guess incorectly 6 times, after that, you lose!")
-    time.sleep(1)
-    collect_guess()
+# variable to store the underscores (_) and correct letters
+# that the user has guessed
+blank_word = []
 
+# add an _ for every letter in the WORD
+for letter in word:
+    blank_word.append('_')
 
-
-
-if __name__ == "__main__":
-    main()
+# print the blank_word variable but not as a list
+print(" ".join(blank_word))
