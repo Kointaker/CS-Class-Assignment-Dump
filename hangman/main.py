@@ -33,15 +33,17 @@ def get_user_letter():
         else:
             print("Hey! Input one word!")
     return guess
-def check_guess(guess):
+def check_guess(guess, incorrect_guesses):
     for letter in lettered_word:
         if guess == letter:
             blank_word[lettered_word.index(letter)] = letter
-            lettered_word.pop(lettered_word.index(letter))
-    
+            # lettered_word.pop(lettered_word.index(letter))
+            break
+    incorrect_guesses += 1 
+    return incorrect_guesses
             
 
-    
+
     
 
 ## display hangman figure
@@ -117,7 +119,7 @@ lettered_word = []
 # variable to store the underscores (_) and correct letters
 # that the user has guessed
 blank_word = []
-
+incorrect_guesses = 0
 # add an _ for every letter in the WORD
 # and split the word into a list of it's letters
 for letter in word:
@@ -133,20 +135,23 @@ for letter in word:
 
 
 def main():
-    # Dev view
-    print(lettered_word)
-    
-    
-    get_user_letter()
-    check_guess(guess)
+    while incorrect_guesses <= 6:
+        # Dev view
+        print(f"Lettered word: {lettered_word}")
+        
+        
+        get_user_letter()
+        check_guess(guess, incorrect_guesses)
 
 
-    # print the blank_word variable but not as a list
-    print(" ".join(blank_word))
-    
-    
-    # Dev view
-    print(lettered_word)
+        # print the blank_word variable but not as a list
+        print(" ".join(blank_word))
+        
+        print(f"Incorrect guesses: {incorrect_guesses}")
+        # Dev view
+        print(f"Blank word: {blank_word}")
+        print("\n\n")
+    print(f"Better luck next time, the word was {word}")
 
 if __name__ == "__main__":
     main()
