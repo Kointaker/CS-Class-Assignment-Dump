@@ -33,14 +33,17 @@ def get_user_letter():
         else:
             print("Hey! Input one word!")
     return guess
+
 def check_guess(guess, incorrect_guesses):
-    for letter in lettered_word:
-        if guess == letter:
-            blank_word[lettered_word.index(letter)] = letter
-            # lettered_word.pop(lettered_word.index(letter))
-            break
-    incorrect_guesses += 1 
-    return incorrect_guesses
+    if guess not in lettered_word:
+        incorrect_guesses += 1
+    else:
+        for letter in lettered_word:
+            if guess == letter:
+                blank_word[lettered_word.index(letter)] = letter
+                lettered_word[lettered_word.index(letter)] = '_'
+        
+
             
 
 
@@ -134,8 +137,10 @@ for letter in word:
 
 
 
-def main():
-    while incorrect_guesses <= 6:
+def main(incorrect_guesses):
+
+    while True:
+            
         # Dev view
         print(f"Lettered word: {lettered_word}")
         
@@ -146,12 +151,12 @@ def main():
 
         # print the blank_word variable but not as a list
         print(" ".join(blank_word))
-        
+        display_figure(incorrect_guesses)
         print(f"Incorrect guesses: {incorrect_guesses}")
         # Dev view
         print(f"Blank word: {blank_word}")
         print("\n\n")
-    print(f"Better luck next time, the word was {word}")
+
 
 if __name__ == "__main__":
-    main()
+    main(incorrect_guesses)
