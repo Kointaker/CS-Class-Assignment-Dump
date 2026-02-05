@@ -25,13 +25,24 @@ def print_game_rules():
 # parameters: None
 # return: a single letter guess
 def get_user_letter():
+    global guess
     while True:
         guess = input("Guess here: ").lower()
         if len(guess) == 1:
             break
         else:
             print("Hey! Input one word!")
+    return guess
+def check_guess(guess):
+    for letter in lettered_word:
+        if guess == letter:
+            blank_word[lettered_word.index(letter)] = letter
+            lettered_word.pop(lettered_word.index(letter))
+    
+            
 
+    
+    
 
 ## display hangman figure
 # print the current graphic based on bad guesses
@@ -102,14 +113,40 @@ def display_figure(bad_guesses):
 # random.choice() and a list of words
 words = ["hello", "goodbye", "good", "bad", "content", "furious", "bombaclat"]
 word = words[random.randint(0, 6)]
-
+lettered_word = []
 # variable to store the underscores (_) and correct letters
 # that the user has guessed
 blank_word = []
 
 # add an _ for every letter in the WORD
+# and split the word into a list of it's letters
 for letter in word:
     blank_word.append('_')
+    lettered_word.append(letter)
 
-# print the blank_word variable but not as a list
-print(" ".join(blank_word))
+
+
+
+
+
+
+
+
+def main():
+    # Dev view
+    print(lettered_word)
+    
+    
+    get_user_letter()
+    check_guess(guess)
+
+
+    # print the blank_word variable but not as a list
+    print(" ".join(blank_word))
+    
+    
+    # Dev view
+    print(lettered_word)
+
+if __name__ == "__main__":
+    main()
