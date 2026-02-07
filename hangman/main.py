@@ -1,9 +1,4 @@
-# -If a guess is correct, fill in the letter
-# -If a guess is incorrect, fill in the hangman
-# -Users have 6 incorrect guesses before losing
-# -If user loses, show game over screen, and show them the word
-# -If user wins, say they win
-
+# Hangman Game
 
 ##### import statements #####
 import random
@@ -43,6 +38,7 @@ def check_guess(guess, incorrect_guesses):
             if guess == letter:
                 blank_word[lettered_word.index(letter)] = letter
                 lettered_word[lettered_word.index(letter)] = '_'
+        return incorrect_guesses
 
         
 
@@ -142,11 +138,14 @@ for letter in word:
 def main():
     incorrect_guesses = 0
     while True:
+        print(" ".join(blank_word))
         get_user_letter()
         incorrect_guesses = check_guess(guess, incorrect_guesses)
-        print(" ".join(blank_word))
-        display_figure(incorrect_guesses)
+        
         print(f"Incorrect guesses: {incorrect_guesses}")
+        display_figure(incorrect_guesses)
+        
+        
         print("\n\n")
         
         
