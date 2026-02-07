@@ -1,4 +1,4 @@
-# Hangman Game
+# Hangman Game/Stable Version
 
 ##### import statements #####
 import random
