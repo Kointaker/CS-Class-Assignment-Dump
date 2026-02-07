@@ -37,6 +37,7 @@ def get_user_letter():
 def check_guess(guess, incorrect_guesses):
     if guess not in lettered_word:
         incorrect_guesses += 1
+        return incorrect_guesses
     else:
         for letter in lettered_word:
             if guess == letter:
@@ -142,21 +143,26 @@ def main(incorrect_guesses):
     while True:
             
         # Dev view
-        print(f"Lettered word: {lettered_word}")
+        # print(f"Lettered word: {lettered_word}")
         
         
         get_user_letter()
         check_guess(guess, incorrect_guesses)
-
 
         # print the blank_word variable but not as a list
         print(" ".join(blank_word))
         display_figure(incorrect_guesses)
         print(f"Incorrect guesses: {incorrect_guesses}")
         # Dev view
-        print(f"Blank word: {blank_word}")
+        # print(f"Blank word: {blank_word}")
         print("\n\n")
+        if incorrect_guesses == 6:
+            print(f"Game over! The word was {word}.")
+            break
 
+        if "_" not in blank_word:
+            print("Congrats! You win!")
+            break
 
 if __name__ == "__main__":
     main(incorrect_guesses)
