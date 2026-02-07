@@ -43,6 +43,7 @@ def check_guess(guess, incorrect_guesses):
             if guess == letter:
                 blank_word[lettered_word.index(letter)] = letter
                 lettered_word[lettered_word.index(letter)] = '_'
+
         
 
             
@@ -123,7 +124,7 @@ lettered_word = []
 # variable to store the underscores (_) and correct letters
 # that the user has guessed
 blank_word = []
-incorrect_guesses = 0
+# incorrect_guesses = 0
 # add an _ for every letter in the WORD
 # and split the word into a list of it's letters
 for letter in word:
@@ -138,24 +139,20 @@ for letter in word:
 
 
 
-def main(incorrect_guesses):
-
+def main():
+    incorrect_guesses = 0
     while True:
-            
-        # Dev view
-        # print(f"Lettered word: {lettered_word}")
-        
-        
         get_user_letter()
-        check_guess(guess, incorrect_guesses)
-
-        # print the blank_word variable but not as a list
+        incorrect_guesses = check_guess(guess, incorrect_guesses)
         print(" ".join(blank_word))
         display_figure(incorrect_guesses)
         print(f"Incorrect guesses: {incorrect_guesses}")
-        # Dev view
-        # print(f"Blank word: {blank_word}")
         print("\n\n")
+        
+        
+        
+        
+        # End Game Conditions
         if incorrect_guesses == 6:
             print(f"Game over! The word was {word}.")
             break
@@ -165,4 +162,4 @@ def main(incorrect_guesses):
             break
 
 if __name__ == "__main__":
-    main(incorrect_guesses)
+    main()
