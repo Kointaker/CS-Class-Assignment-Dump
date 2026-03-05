@@ -13,9 +13,17 @@
 # parameters: a dictionary
 # return: nothing
 def add_contact():
-    # get new contact_info
+    
+    full_name = input("Enter contact's full name: ")
+    phone_number = input("Enter contact's phone number: ")
+    email = input("Enter contact's email address: ")
+    address = input("Enter contact's home address: ")
+    birthday = input("Enter contact's birthday: ")
+    notes = input("Enter any notes about the contact: ")
+    contact_name = input("Enter a name/nickname for the contact: ")
     # add new key, value to contacts dictionary
-    pass
+    
+    contacts[f"{contact_name}"] = [full_name, phone_number, email, address, birthday, notes]
 
 
 
@@ -69,9 +77,10 @@ def show_phone_number():
 # Profile Picture
 contacts = {
 
+
 }
-
-
+add_contact()
+print(contacts)
 
 
 
