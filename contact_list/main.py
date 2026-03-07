@@ -48,11 +48,17 @@ def remove_contact(contacts):
 # print single contact from dictionary
 # parameters: a dictionary
 # return: nothing
-def show_contact_info():
+def show_contact_info(contacts):
     # if name in dictionary,
     # print information about contact
-
-    pass
+    list_contacts(contacts)
+    show = input("Enter the name/nickname of the contact info you want to see (case sensitive): ")
+    print("Full Name:", contacts[show]["full_name"])
+    print("Phone Number:",contacts[show]["phone_number"])
+    print("Email:", contacts[show]["email"])
+    print("Address:", contacts[show]["address"])
+    print("Birthday:", contacts[show]["birthday"])
+    print("Notes:", contacts[show]["notes"])
 
 
 
@@ -60,10 +66,13 @@ def show_contact_info():
 # print phone number for single contact
 # parameters: a dictionary
 # return: nothing
-def show_phone_number():
+def show_phone_number(contacts):
     # if name in dictionary
     # print phone number of contact
-    pass
+    list_contacts(contacts)
+    show = input("Enter the name/nickname of the contact you want to see the phone number of (case sensitive): ")
+    print(contacts[show]["phone_number"])
+
 
 
 
@@ -120,10 +129,10 @@ while True:
         remove_contact(contacts)
     elif choice == 3:
         print("")
-        show_contact_info()
+        show_contact_info(contacts)
     elif choice == 4:
         print("")
-        show_phone_number()
+        show_phone_number(contacts)
     elif choice == 5:
         print("")
         list_contacts(contacts)
