@@ -34,7 +34,8 @@ def remove_contact(contacts):
     # test if nickname is in dictionary
     # if name is found, remove key, value
     # else, tell user contact is not found
-    remove = input("Enter the name/nickname of the contact you want to remove: ")
+    list_contacts(contacts)
+    remove = input("Enter the name/nickname of the contact you want to remove (case senstive): ")
     
     if remove in contacts:
         del contacts[remove]
