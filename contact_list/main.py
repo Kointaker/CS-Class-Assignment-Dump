@@ -51,6 +51,7 @@ def remove_contact(contacts):
 def show_contact_info():
     # if name in dictionary,
     # print information about contact
+
     pass
 
 
@@ -65,6 +66,11 @@ def show_phone_number():
     pass
 
 
+
+def list_contacts(contacts):
+    # print list of all contact names/nicknames in dictionary
+    for value in contacts:
+        print(value)
 
 
 ### main program
@@ -102,7 +108,8 @@ while True:
     print("2. Remove a contact")
     print("3. Show contact info")
     print("4. Show contact phone number")
-    print("5. Exit")
+    print("5. List available contacts")
+    print("6. Exit")
     choice = int(input("Enter the number of your choice: "))
     
     if choice == 1:
@@ -118,6 +125,9 @@ while True:
         print("")
         show_phone_number()
     elif choice == 5:
+        print("")
+        list_contacts(contacts)
+    elif choice == 6:
         break
     elif choice == 10:
         print("")
