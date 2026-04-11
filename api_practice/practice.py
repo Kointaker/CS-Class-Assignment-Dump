@@ -3,21 +3,24 @@ import requests
 
 
 # use requests.get() to get the data response from the API
-url = "https://api.portfoliooptimizer.io/v1/portfolio/optimization/minimum-variance"
-# print the response using the json() method
-response = requests.post(
-    "https://api.portfoliooptimizer.io/v1/portfolio",
-    json={'assets': 2, 'assetsCovarianceMatrix': [[0.0025, 0.0005], [0.0005, 0.0100]]}
-    
-)
+url = "https://api.weather.gov/"
 
 
-print("Portfolio Data:")
-print(response)
-print("")
 
-### extra
-# print out the status code of the response
-print("Status Code:")
+# 3. Make the request
+# If your API uses GET with query parameters:
+# response = requests.get(url, params=payload)
+# If it uses POST with JSON body (more common for optimizers):
+response = requests.get(url)
+
+# 4. Print the status code
 print(response.status_code)
-# print specific parts of the data (hint doesn't the data look familiar? Maybe like a dictionary, and lists?)
+
+# 5. Print the JSON response
+print(response)
+
+
+
+
+
+
