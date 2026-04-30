@@ -6,33 +6,46 @@
 # Make an instance called restaurant from your class. Print the two attri-
 # butes individually, and then call both methods.
 
+def main():
+        
+    class Restaurant:
+        def __init__(self, restaurant_name, cuisine_type):
+            self.restaurant_name = restaurant_name
+            self.cuisine_type = cuisine_type
 
-class Restaurant:
-    def __init__(self, restaurant_name, cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
+        def describe_restaurant(self):
+            print(f"Restaurant name: {self.restaurant_name}")
+            print(f"Cuisine type: {self.cuisine_type}")
 
-    def describe_restaurant(self):
-        print(f"Restaurant name: {self.restaurant_name}")
-        print(f"Cuisine type: {self.cuisine_type}")
+        def open_restaurant(self):
+            print(f"{self.restaurant_name} is now open!")
 
-    def open_restaurant(self):
-        print(f"{self.restaurant_name} is now open!")
+    Michaels = Restaurant("Michaels", "Seafood")
 
-Michaels = Restaurant("Michaels", "Seafood")
-print(Michaels.restaurant_name)
-print(Michaels.cuisine_type)
+    # Individually printing restaurant information
+    print(Michaels.restaurant_name)
+    print(Michaels.cuisine_type)
+
+    # Calling Restaurant methods
+    Michaels.describe_restaurant()
+    Michaels.open_restaurant()
+
+
+    # 9-2. Three Restaurants: Start with your class from Exercise 9-1. Create three
+    # different instances from the class, and call describe_restaurant() for each
+    # instance.
 
 
 
 
-# 9-2. Three Restaurants: Start with your class from Exercise 9-1. Create three
-# different instances from the class, and call describe_restaurant() for each
-# instance.
-# 9-3. Users: Make a class called User. Create two attributes called first_name
-# and last_name, and then create several other attributes that are typically stored
-# in a user profile. Make a method called describe_user() that prints a summary
-# of the user’s information. Make another method called greet_user() that prints
-# a personalized greeting to the user.
-# Create several instances representing different users, and call both meth-
-# ods for each user.
+
+    # 9-3. Users: Make a class called User. Create two attributes called first_name
+    # and last_name, and then create several other attributes that are typically stored
+    # in a user profile. Make a method called describe_user() that prints a summary
+    # of the user’s information. Make another method called greet_user() that prints
+    # a personalized greeting to the user.
+    # Create several instances representing different users, and call both meth-
+    # ods for each user.
+
+if __name__ == "__main__":
+    main()
