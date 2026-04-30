@@ -25,19 +25,25 @@ def main():
     # Individually printing restaurant information
     print(Michaels.restaurant_name)
     print(Michaels.cuisine_type)
-
+    print("\n")
+    
     # Calling Restaurant methods
     Michaels.describe_restaurant()
     Michaels.open_restaurant()
-
+    print("\n")
 
     # 9-2. Three Restaurants: Start with your class from Exercise 9-1. Create three
     # different instances from the class, and call describe_restaurant() for each
     # instance.
 
-
-
-
+    ava = Restaurant("Greek Pretzels", "Greek Food")
+    michael = Restaurant("Cool Cuisine", "Cracker food")
+    josh = Restaurant("Dominican Drive", "Dominican Cuisine")
+    
+    ava.describe_restaurant()
+    michael.describe_restaurant()
+    josh.describe_restaurant()
+    print("\n")
 
     # 9-3. Users: Make a class called User. Create two attributes called first_name
     # and last_name, and then create several other attributes that are typically stored
@@ -46,6 +52,8 @@ def main():
     # a personalized greeting to the user.
     # Create several instances representing different users, and call both meth-
     # ods for each user.
+
+    
 
 if __name__ == "__main__":
     main()
