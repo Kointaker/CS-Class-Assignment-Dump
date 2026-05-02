@@ -52,8 +52,46 @@ def main():
     # a personalized greeting to the user.
     # Create several instances representing different users, and call both meth-
     # ods for each user.
+    class User:
+        def __init__(self, first_name, last_name, id, ethnicity, wealth):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.id = id
+            self.ethnicity = ethnicity
+            self.wealth = wealth
+
+        def describe_user(self):
+            print(f"""
+User Information: {self.first_name} {self.last_name}
+Id: {self.id}
+Ethnicity: {self.ethnicity}
+Wealth Class: {self.wealth}
+
+
+""")
+
+
+        def greet_user(self):
+            print(f"Hello {self.first_name}, welcome to our restaurant, we have great food that you would enjoy. \nYour id for the all-you-can-eat is {self.id}, enjoy!")
+            
+
+
+
+    Josh = User("Joshua", "Ferreira", 12811068, "Dominican", "Upper-Class")
+    Josh.describe_user()
+    Josh.greet_user()
+    
+    Cliff = User("Clifford", "Ashbrook", "11112211", "Japanese", "Ultra-Wealth")
+    Cliff.describe_user()
+    Cliff.greet_user()
+
+    Andrew = User("Andrew", "Leung", 11111111, "African", "Hyper-Wealth")
+    Andrew.describe_user()
+    Andrew.greet_user()
+
+
+
 
     
-
 if __name__ == "__main__":
     main()
