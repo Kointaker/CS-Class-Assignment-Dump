@@ -93,5 +93,31 @@ Wealth Class: {self.wealth}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     main()
