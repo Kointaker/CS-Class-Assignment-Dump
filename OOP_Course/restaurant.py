@@ -81,7 +81,7 @@ Wealth Class: {self.wealth}
     Josh.describe_user()
     Josh.greet_user()
     
-    Cliff = User("Clifford", "Ashbrook", "11112211", "Japanese", "Ultra-Wealth")
+    Cliff = User("Clifford", "Ashbrook", 11112211, "Japanese", "Ultra-Wealth")
     Cliff.describe_user()
     Cliff.greet_user()
 
@@ -92,6 +92,6 @@ Wealth Class: {self.wealth}
 
 
 
-    
+
 if __name__ == "__main__":
     main()
