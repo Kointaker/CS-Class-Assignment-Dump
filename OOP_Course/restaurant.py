@@ -21,6 +21,9 @@ def main():
         def open_restaurant(self):
             print(f"{self.restaurant_name} is now open!")
 
+        def increment_number_served(self, x):
+            self.number_served += x
+
     Michaels = Restaurant("Michaels", "Seafood")
 
     # Individually printing restaurant information
@@ -106,7 +109,9 @@ Wealth Class: {self.wealth}
 
     restaurant = Restaurant("Bunger Bagels", "Japanese")
     print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
-    restaurant.number_served = 23
+    restaurant.number_served = 10
+    print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
+    restaurant.increment_number_served(51)
     print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
 
 
