@@ -24,6 +24,9 @@ def main():
         def increment_number_served(self, x):
             self.number_served += x
 
+
+
+        
     Michaels = Restaurant("Michaels", "Seafood")
 
     # Individually printing restaurant information
@@ -125,8 +128,6 @@ Wealth Class: {self.wealth}
 # several times. Print the value of login_attempts to make sure it was incremented
 # properly, and then call reset_login_attempts(). Print login_attempts again to
 # make sure it was reset to 0.
-
-
 
 
 
