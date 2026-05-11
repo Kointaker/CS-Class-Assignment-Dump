@@ -13,6 +13,7 @@ def main():
             self.restaurant_name = restaurant_name
             self.cuisine_type = cuisine_type
             self.number_served = 0
+            self.login_attempts = 0
 
         def describe_restaurant(self):
             print(f"Restaurant name: {self.restaurant_name}")
@@ -24,7 +25,13 @@ def main():
         def increment_number_served(self, x):
             self.number_served += x
 
+        def increment_login_attempts(self):
+            self.login_attempts += 1
 
+        def reset_login_attempts(self):
+            self.login_attempts = 0
+
+        
 
         
     Michaels = Restaurant("Michaels", "Seafood")
@@ -130,7 +137,9 @@ Wealth Class: {self.wealth}
 # make sure it was reset to 0.
 
 
+    jj = Restaurant("JJ's", "Cool-Food")
 
+    print(f"\n\n Starting Login attempts: {jj.login_attempts}")
 
 
 
