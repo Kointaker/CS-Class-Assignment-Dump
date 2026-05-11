@@ -144,7 +144,9 @@ Wealth Class: {self.wealth}
     jj.increment_login_attempts()
     jj.increment_login_attempts()
     print(f"\nI tried logging in 3 times, my login attempts are now: {jj.login_attempts}")
-
+    jj.reset_login_attempts()
+    print(f"Login attempts were reset, attempts is now at: {jj.login_attempts}")
+    
 
 
 
