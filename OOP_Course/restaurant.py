@@ -140,6 +140,10 @@ Wealth Class: {self.wealth}
     jj = Restaurant("JJ's", "Cool-Food")
 
     print(f"\n\n Starting Login attempts: {jj.login_attempts}")
+    jj.increment_login_attempts()
+    jj.increment_login_attempts()
+    jj.increment_login_attempts()
+    print(f"\nI tried logging in 3 times, my login attempts are now: {jj.login_attempts}")
 
 
 
