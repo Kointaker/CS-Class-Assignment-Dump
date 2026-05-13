@@ -14,7 +14,6 @@ def main():
             self.cuisine_type = cuisine_type
             self.number_served = 0
             
-
         def describe_restaurant(self):
             print(f"Restaurant name: {self.restaurant_name}")
             print(f"Cuisine type: {self.cuisine_type}")
@@ -24,6 +23,9 @@ def main():
 
         def increment_number_served(self, x):
             self.number_served += x
+        
+        def set_number_served(self, x):
+            self.number_served = x
 
 
 
@@ -70,7 +72,6 @@ def main():
             self.ethnicity = ethnicity
             self.wealth = wealth
             self.login_attempts = 0
-
 
         def increment_login_attempts(self):
             self.login_attempts += 1
@@ -122,12 +123,13 @@ Wealth Class: {self.wealth}
 # business.
 
     restaurant = Restaurant("Bunger Bagels", "Japanese")
-    print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
+    print(f"\nNumber served at {restaurant.restaurant_name}: {restaurant.number_served}")
     restaurant.number_served = 10
-    print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
+    print(f"\nNumber served at {restaurant.restaurant_name}: {restaurant.number_served}")
     restaurant.increment_number_served(51)
-    print(f"Number served at {restaurant.restaurant_name}: {restaurant.number_served}")
-
+    print(f"\nNumber served at {restaurant.restaurant_name}: {restaurant.number_served}")
+    restaurant.set_number_served(3)
+    print(f"\nWhoops, we counted wrong, we actually served {restaurant.number_served} people today!!")
 
 
 
