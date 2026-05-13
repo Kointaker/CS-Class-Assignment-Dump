@@ -13,7 +13,7 @@ def main():
             self.restaurant_name = restaurant_name
             self.cuisine_type = cuisine_type
             self.number_served = 0
-            self.login_attempts = 0
+            
 
         def describe_restaurant(self):
             print(f"Restaurant name: {self.restaurant_name}")
@@ -25,13 +25,9 @@ def main():
         def increment_number_served(self, x):
             self.number_served += x
 
-        def increment_login_attempts(self):
-            self.login_attempts += 1
 
-        def reset_login_attempts(self):
-            self.login_attempts = 0
 
-        
+
 
         
     Michaels = Restaurant("Michaels", "Seafood")
@@ -66,14 +62,22 @@ def main():
     # a personalized greeting to the user.
     # Create several instances representing different users, and call both meth-
     # ods for each user.
-    class User:
+    class User:     
         def __init__(self, first_name, last_name, id, ethnicity, wealth):
             self.first_name = first_name
             self.last_name = last_name
             self.id = id
             self.ethnicity = ethnicity
             self.wealth = wealth
+            self.login_attempts = 0
 
+
+        def increment_login_attempts(self):
+            self.login_attempts += 1
+
+        def reset_login_attempts(self):
+            self.login_attempts = 0
+        
         def describe_user(self):
             print(f"""
 User Information: {self.first_name} {self.last_name}
@@ -137,8 +141,7 @@ Wealth Class: {self.wealth}
 # make sure it was reset to 0.
 
 
-    jj = Restaurant("JJ's", "Cool-Food")
-
+    jj = User("Liam", "Mackenzie", 677677, "White Wite", "Ultra High")
     print(f"\n\n Starting Login attempts: {jj.login_attempts}")
     jj.increment_login_attempts()
     jj.increment_login_attempts()
@@ -165,6 +168,19 @@ Wealth Class: {self.wealth}
 # Create an instance of IceCreamStand, and call this method.
 
 
+
+
+
+
+
+
+
+    class IceCreamStand:
+        
+        
+        
+        
+        pass
 
 
 
