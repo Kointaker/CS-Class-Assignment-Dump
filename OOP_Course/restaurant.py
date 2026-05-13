@@ -157,11 +157,6 @@ Wealth Class: {self.wealth}
 
 
 
-
-
-
-
-
 #     9-6. Ice Cream Stand: An ice cream stand is a specific kind of restaurant. Write
 # a class called IceCreamStand that inherits from the Restaurant class you wrote in
 # Exercise 9-1 (page 162) or Exercise 9-4 (page 166). Either version of the class
@@ -169,15 +164,9 @@ Wealth Class: {self.wealth}
 # stores a list of ice cream flavors. Write a method that displays these flavors.
 # Create an instance of IceCreamStand, and call this method.
 
-
-
-
-
-
-
-
-
-    class IceCreamStand:
+    class IceCreamStand(Restaurant):
+        def __init__(self, restaurant_name, cuisine_type):
+            super().__init__
         
         
         
