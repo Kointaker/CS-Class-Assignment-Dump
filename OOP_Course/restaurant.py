@@ -166,14 +166,17 @@ Wealth Class: {self.wealth}
 
     class IceCreamStand(Restaurant):
         def __init__(self, restaurant_name, cuisine_type):
-            super().__init__
+            super().__init__(restaurant_name, cuisine_type)
+        
+            self.flavors = ["Vanilla", "Strawberry", "Chocolate", "Banana", "Coco", "Blueberry", "Oreo"]
+        
+        def list_flavors(self):
+            print(f"\nOur flavors are: {self.flavors}")
         
         
-        
-        
-        pass
+    Josh = IceCreamStand("Josh's Ice Cream", "Ice Cream")
 
-
+    Josh.list_flavors()
 
 
 
