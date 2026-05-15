@@ -269,22 +269,28 @@ Wealth Class: {self.wealth}
         def increment_odometer(self, miles):
             self.odometer_reading += miles
     
-    
+    class Battery:
+        def __init__(self, battery_size=40):
+            self.battery_size = battery_size
+
+        def describe_battery(self):
+            print(f"\nThe battery size of this car is: {self.battery_size}")
+
+
     class ElectricCar(Car):
         def __init__(self, make, model, year):
             super().__init__(make, model, year)
 
-            self.battery_size = 40
+            self.battery = Battery()
 
 
-        def describe_battery(self):
-            print(f"\nThe battery size of this car is: {self.battery_size}")
+        
         
    
    
     my_leaf = ElectricCar("nissan", "leaf", 2024)
     print("\n", my_leaf.get_descriptive_name())
-    my_leaf.describe_battery()
+    my_leaf.battery.describe_battery()
 
 
 
