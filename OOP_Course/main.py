@@ -247,7 +247,6 @@ Wealth Class: {self.wealth}
 
     class Car:
         def __init__(self, make, model, year):
-    
             self.make = make
             self.model = model
             self.year = year
@@ -269,6 +268,7 @@ Wealth Class: {self.wealth}
         def increment_odometer(self, miles):
             self.odometer_reading += miles
     
+    
     class Battery:
         def __init__(self, battery_size=40):
             self.battery_size = battery_size
@@ -276,6 +276,17 @@ Wealth Class: {self.wealth}
         def describe_battery(self):
             print(f"\nThe battery size of this car is: {self.battery_size}")
 
+        def get_range(self):
+            if self.battery_size == 40:
+                range = 150
+            elif self.battery_size == 65:
+                range = 225
+            print(f"\nThis car can go about {range} miles on a full charge")
+
+        def upgrade_battery(self):
+            if self.battery_size != 65:
+                self.battery_size = 65
+            
 
     class ElectricCar(Car):
         def __init__(self, make, model, year):
@@ -291,7 +302,12 @@ Wealth Class: {self.wealth}
     my_leaf = ElectricCar("nissan", "leaf", 2024)
     print("\n", my_leaf.get_descriptive_name())
     my_leaf.battery.describe_battery()
+    my_leaf.battery.get_range()
 
+    audi = ElectricCar("Audi", "E-tron GT", 2026)
+    audi.battery.get_range()
+    audi.battery.upgrade_battery()
+    audi.battery.get_range()
 
 
 
