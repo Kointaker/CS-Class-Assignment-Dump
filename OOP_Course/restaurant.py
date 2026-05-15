@@ -195,14 +195,16 @@ Wealth Class: {self.wealth}
         def __init__(self, first_name, last_name, id, ethnicity, wealth):
             super().__init__(first_name, last_name, id, ethnicity, wealth)
 
-            self.privileges = ["Can add post", "Can delete post", "Can ban user", "Can spawn admin items", "Can use invincibility", "Can use admin sword"]
+            self.privileges = Privileges()
 
 
-        def show_privileges(self):
-            print(f"\nThe privileges that admin users have are: {self.privileges}")
 
-    Landon = Administrator("Landon", "Terry", 116644, "White", "Ultra Wealthy")
-    Landon.show_privileges()
+            
+
+
+
+
+    
 
         
 
@@ -219,8 +221,17 @@ Wealth Class: {self.wealth}
 # method to show its privileges.
 
 
+    class Privileges:
+        def __init__(self):
+        
+            self.privileges = ["Can add post", "Can delete post", "Can ban user", "Can spawn admin items", "Can use invincibility", "Can use admin sword"]
+        
+        def show_privileges(self):
+            print(f"\nThe privileges that admin users have are: {self.privileges}")
 
-
+   
+    Landon = Administrator("Landon", "Terry", 116644, "White", "Ultra Wealthy")
+    Landon.privileges.show_privileges()
 
 
 
