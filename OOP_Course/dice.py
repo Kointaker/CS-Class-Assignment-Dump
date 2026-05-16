@@ -29,12 +29,13 @@ for i in range(10):
 
 L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "L", "M", "N", "O", "P"]
 
-
+winning_ticket = []
 print(f"Any ticket that mathing these 4 numbers or letters wins: ")
 for i in range(4):
     x = random.randint(0, 14)
-    print(L[x])
-
+    
+    winning_ticket.append(L[x])
+print(winning_ticket)
 
 
 
@@ -42,3 +43,22 @@ for i in range(4):
 # the kind of lottery you just modeled. Make a list or tuple called my_ticket. Write
 # a loop that keeps pulling numbers until your ticket wins. Print a message report-
 # ing how many times the loop had to run to give you a winning ticket.
+
+
+
+x = 0
+won = False
+
+y = 0
+while not won:
+    y +=1
+    my_ticket = []
+    for i in range(4):
+        x = random.randint(0, 14)
+        my_ticket.append(L[x])
+
+    if my_ticket == winning_ticket:
+        print(my_ticket)
+        print(f"It took {y} tries to get this!")
+        won = True
+
