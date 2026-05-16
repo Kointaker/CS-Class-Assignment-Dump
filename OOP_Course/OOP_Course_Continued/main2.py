@@ -1,6 +1,7 @@
 
-from modules2 import Restaurant, User, Privileges, Administrator
-
+from modules2 import Restaurant
+from user import User
+from admin import Administrator, Privileges
 
 
 #     9-10. Imported Restaurant: Using your latest Restaurant class, store it in a mod-
@@ -32,3 +33,8 @@ josh.privileges.show_privileges()
 # Privileges and Admin classes in a separate module. In a separate file, create
 # an Admin instance and call show_privileges() to show that everything is still
 # working correctly.
+
+
+Landon = Administrator("Landon", "Terry", 132123, "White", "Rich")
+Landon.privileges.show_privileges()
+
