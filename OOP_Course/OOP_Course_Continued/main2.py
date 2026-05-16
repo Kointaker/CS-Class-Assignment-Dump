@@ -1,5 +1,5 @@
 
-from modules2 import Restaurant
+from modules2 import Restaurant, User, Privileges, Administrator
 
 
 
@@ -20,7 +20,8 @@ new.describe_restaurant()
 # make an Admin instance, and call show_privileges() to show that everything is
 # working correctly.
 
-
+josh = Administrator("Joshua", "Ferreira", 123123, "Dominican", "Ultra-Wealth")
+josh.privileges.show_privileges()
 
 
 
