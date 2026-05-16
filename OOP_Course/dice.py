@@ -27,9 +27,13 @@ for i in range(10):
 # Randomly select 4 numbers or letters from the list and print a message saying that
 # any ticket matching these 4 numbers or letters wins a prize.
 
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "L", "M", "N", "O", "P"]
 
 
-
+print(f"Any ticket that mathing these 4 numbers or letters wins: ")
+for i in range(4):
+    x = random.randint(0, 14)
+    print(L[x])
 
 
 
