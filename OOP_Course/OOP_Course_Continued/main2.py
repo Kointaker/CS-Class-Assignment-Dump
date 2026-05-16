@@ -10,7 +10,7 @@ from modules2 import Restaurant
 
 new = Restaurant("Super-Foods", "American Food")
 print(new.number_served)
-
+new.describe_restaurant()
 
 
 
